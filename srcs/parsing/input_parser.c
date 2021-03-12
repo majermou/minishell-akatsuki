@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:38:31 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/12 16:27:30 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:07:53 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,25 @@ typedef struct      o_parse
 }                   p_parse;
 
 
+void start_parsing(char *line)
+{
+    
+}
+
 void  minishell()
 {
-    char *tab;
-    char tmp[100];
-    int ret;
+    char *line;
     
-    tab = NULL;
-    write(1, "mini$hell~~> ", 13);
-    while((ret = get_next_line(0, &tab)) > 0)
+    line = NULL;
+    write(1, "\033[0;35m mini$hell~~> \033[0;37m", 28);
+    while(get_next_line(0, &line) > 0)
     {
-        write(1, "mini$hell~~> ", 13);
+        start_parsing(line);
+        printf("%s\n", line);
+        free(line);
+        line = NULL;
+        write(1, "\033[0;35m mini$hell~~> \033[0;37m", 28);
     }
-    printf("%s", tab);
 }
 
 

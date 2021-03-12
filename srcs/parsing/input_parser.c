@@ -6,13 +6,14 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:38:31 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/11 17:07:23 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/12 16:27:30 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../../getLine/get_next_line.h"
 
 typedef struct      o_parse
 {
@@ -24,12 +25,17 @@ typedef struct      o_parse
 
 void  minishell()
 {
-    char tmp[100]; 
+    char *tab;
+    char tmp[100];
+    int ret;
     
-    while(1)
+    tab = NULL;
+    write(1, "mini$hell~~> ", 13);
+    while((ret = get_next_line(0, &tab)) > 0)
     {
-        printf("mini$hell~~> ");
+        write(1, "mini$hell~~> ", 13);
     }
+    printf("%s", tab);
 }
 
 

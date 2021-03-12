@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majermou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 18:18:02 by majermou          #+#    #+#             */
-/*   Updated: 2019/12/31 16:16:26 by majermou         ###   ########.fr       */
+/*   Updated: 2021/03/12 16:25:29 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+
+#define BUFFER_SIZE 100
 int			get_next_line(int fd, char **line);
 int			check_break_line(char *tab);
 int			ft_strlen(const char *str);

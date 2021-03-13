@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 18:05:05 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/13 17:05:19 by abdait-m         ###   ########.fr       */
+/*   Created: 2019/10/21 11:54:48 by abdait-m          #+#    #+#             */
+/*   Updated: 2021/03/13 17:11:43 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL
-#define MINISHELL
+#include "libft.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../srcs/get_next_line.h"
-#include "../srcs/libft.h"
-
-typedef struct      o_parse
+int		ft_strlen(const char *s)
 {
-    char *cmds;
-    char **args;
-    char *redirs;
-}                   p_parse;
+	size_t		j;
 
-void start_parsing(char *line);
-
-#endif
+	j = 0;
+	while (*s != '\0')
+	{
+		j++;
+		s++;
+	}
+	return (j);
+}

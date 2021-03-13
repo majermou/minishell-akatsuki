@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majermou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 18:17:47 by majermou          #+#    #+#             */
-/*   Updated: 2019/12/28 15:34:40 by majermou         ###   ########.fr       */
+/*   Updated: 2021/03/13 17:12:12 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int						check_previous_read(char **line, char *tab)
 	return (1);
 }
 
-char					*ft_strjoin(char *line, char *tab)
+char					*ft_strjoin(char const *line, char const *tab)
 {
 	char				*ptr;
 	char				*tmp;

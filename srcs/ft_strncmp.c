@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdait-m <abdait-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:36:49 by abdait-m          #+#    #+#             */
-/*   Updated: 2019/10/23 15:35:03 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:14:48 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/minishell.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

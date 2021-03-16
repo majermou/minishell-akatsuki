@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdait-m <abdait-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:15:12 by abdait-m          #+#    #+#             */
-/*   Updated: 2019/10/24 17:25:55 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:15:06 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/minishell.h"
 
 static int		ft_firstchar(char const *str, char const *set)
 {

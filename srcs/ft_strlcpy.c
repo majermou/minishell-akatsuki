@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdait-m <abdait-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 11:56:45 by abdait-m          #+#    #+#             */
-/*   Updated: 2019/10/23 15:34:52 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:14:55 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/minishell.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

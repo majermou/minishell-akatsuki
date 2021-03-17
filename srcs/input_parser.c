@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:38:31 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/16 23:24:21 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/17 15:39:48 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int count_char(char *line, char c)
     check_1 = 0;
     check_2 = 0;
     i = -1;
+    count = 0;
     while (line[++i])
     {
         if (line[i] == '"')
@@ -36,14 +37,16 @@ int count_char(char *line, char c)
 }
 
 
-void start_parsing(char *line)
+void start_parsing(char *line, p_parse *prs)
 {
-    p_parse *prs;
-    int len;
+    // int len;
+    int i;
 
-    prs->sc_cmds[0] = ft_strtok(line, ";");
-    while (prs->sc_cmds)
+    prs->sc_cmds = ft_split(line, ';');
+    i = 0;
+    while (prs->sc_cmds[i])
     {
-        printf("%s\n", "wachriiiifffff");
+        printf("|%s|\n", prs->sc_cmds[i]);
+        i++;
     }
 }

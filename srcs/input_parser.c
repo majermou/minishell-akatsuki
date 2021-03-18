@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:38:31 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/18 00:05:12 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/18 23:02:25 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,47 @@
 
 //  Try to make a function that calculates the number of parenthesis and check if it is an error or not,
 // use open close method  : if " is open  then the next one should close it etcetera.....
+
+
+int count_parenthesis(char *line)
+{
+    int open_p;
+    int count_p;
+    int open_pp;
+    int count_pp;
+    int i;
+
+    i = -1;
+    open_p = 0;
+    open_pp = 0;
+    count_p = 0;
+    count_pp = 0;
+    while (line[++i])
+    {
+        if (line[i] == '"' && open_pp == 0 && open_p == 0)
+        {
+            count_pp++;
+            open_pp = 1;
+        }
+        else if (line[i] == '"' && open_pp == 1)
+        {
+            count_pp--;
+            open_pp = 0;
+        }
+        if (line[i] == '\'' && open_p == 0 && open_pp == 0)
+        {
+            count_p++;
+            open_p = 1;
+        }
+        else if (line[i] == '\'' && open_p == 1)
+        {
+            count_p--;
+            open_p = 0;
+        }
+    }
+    return (count_p + count_pp);
+}
+
 
 // Try to use this split for your parsing :
 
@@ -105,41 +146,28 @@
 // 	return (sp->p);
 // }
 
-
-int count_char(char *line, char c)
+void        raise_an_exception()
 {
-    int i;
-    int check_1;
-    int check_2;
-    int count;
-
-    check_1 = 0;
-    check_2 = 0;
-    i = -1;
-    count = 0;
-    while (line[++i])
-    {
-        if (line[i] == '"')
-            check_1 += 1;
-        if (line[i] == '\'')
-            check_2 += 1;
-        if (line[i] == c && line[i + 1] != c && check_1 % 2 == 0 && check_2 % 2 == 0)
-            count++;
-    }
-    return count;
+    printf("Parsing Error !!\n");
 }
 
 
 void start_parsing(char *line, p_parse *prs)
 {
+    s_split sp;
     // int len;
     int i;
 
-    prs->sc_cmds = ft_split(line, ';');
-    i = 0;
-    while (prs->sc_cmds[i])
+    if (count_parenthesis(line))
+        raise_an_exception();
+    else 
     {
-        printf("|%s|\n", prs->sc_cmds[i]);
-        i++;
+        prs->sc_cmds = ft_split(&sp, line, ';');
+        i = 0;
+        while (prs->sc_cmds[i])
+        {
+            printf("|%s|\n", prs->sc_cmds[i]);
+            i++;
+        }
     }
 }

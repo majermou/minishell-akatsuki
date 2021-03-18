@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 18:05:05 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/17 15:22:53 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/18 20:52:39 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,22 @@ typedef struct      o_parse
     char **sc_cmds;
 }                   p_parse;
 
+typedef struct 
+{
+    char **p;
+    int size;
+    int i;
+    int j;
+    int check_pp;
+    int check_p;
+} s_split;
+
 void start_parsing(char *line, p_parse *prs);
 char        *my_strtok(char *s, char *check);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char				**ft_split(char const *s, char c);
+char				**ft_split(s_split *sp, char const *s, char c);
 char			*ft_itoa(int n);
-char			**ft_split(char const *s, char c);
+// char			**ft_split(char const *s, char c);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s);

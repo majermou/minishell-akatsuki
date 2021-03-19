@@ -6,7 +6,7 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:38:31 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/18 23:02:25 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/19 18:22:19 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,41 @@
 
 int count_parenthesis(char *line)
 {
-    int open_p;
-    int count_p;
-    int open_pp;
-    int count_pp;
+    int open_sq;
+    int count_sq;
+    int open_dq;
+    int count_dq;
     int i;
 
     i = -1;
-    open_p = 0;
-    open_pp = 0;
-    count_p = 0;
-    count_pp = 0;
+    open_sq = 0;
+    open_dq = 0;
+    count_sq = 0;
+    count_dq = 0;
     while (line[++i])
     {
-        if (line[i] == '"' && open_pp == 0 && open_p == 0)
+        if (line[i] == '"' && open_dq == 0 && open_sq == 0)
         {
-            count_pp++;
-            open_pp = 1;
+            count_dq++;
+            open_dq = 1;
         }
-        else if (line[i] == '"' && open_pp == 1)
+        else if (line[i] == '"' && open_dq == 1)
         {
-            count_pp--;
-            open_pp = 0;
+            count_dq--;
+            open_dq = 0;
         }
-        if (line[i] == '\'' && open_p == 0 && open_pp == 0)
+        if (line[i] == '\'' && open_sq == 0 && open_dq == 0)
         {
-            count_p++;
-            open_p = 1;
+            count_sq++;
+            open_sq = 1;
         }
-        else if (line[i] == '\'' && open_p == 1)
+        else if (line[i] == '\'' && open_sq == 1)
         {
-            count_p--;
-            open_p = 0;
+            count_sq--;
+            open_sq = 0;
         }
     }
-    return (count_p + count_pp);
+    return (count_sq + count_dq);
 }
 
 
@@ -151,13 +151,21 @@ void        raise_an_exception()
     printf("Parsing Error !!\n");
 }
 
+void        initialize_vars(s_split *ps)
+{
+    ps->check_dq = 0;
+    ps->check_sq = 0;
+    ps->i = 0;
+    
+}
 
-void start_parsing(char *line, p_parse *prs)
+
+void start_parsing(char *line, sc_parse *prs)
 {
     s_split sp;
     // int len;
     int i;
-
+    initialize_vars(&sp);
     if (count_parenthesis(line))
         raise_an_exception();
     else 

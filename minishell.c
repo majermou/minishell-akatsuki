@@ -6,13 +6,13 @@
 /*   By: abdait-m <abdait-m@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 18:08:05 by abdait-m          #+#    #+#             */
-/*   Updated: 2021/03/17 15:23:57 by abdait-m         ###   ########.fr       */
+/*   Updated: 2021/03/19 18:21:33 by abdait-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minishell.h"
 
-void  minishell(p_parse *prs)
+void  minishell(sc_parse *prs)
 {
     char *line;
     
@@ -30,7 +30,7 @@ void  minishell(p_parse *prs)
 
 int main()
 {
-    p_parse prs;
+    sc_parse prs;
     
     minishell(&prs);
     return 0;
